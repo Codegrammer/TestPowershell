@@ -1,3 +1,10 @@
+trap
+{
+    write-output $_
+    ##teamcity[buildStatus status='FAILURE' ]
+    exit 1
+}
+
 $scriptPath = split-path -parent $MyInvocation.MyCommand.Definition
 $scriptPath = $scriptPath + '\'
 
