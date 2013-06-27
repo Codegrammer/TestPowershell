@@ -10,3 +10,5 @@ $testExe = $testPath + 'Test.exe'
 
 $state = &$testExe $args
 write-output $state
+
+exit 1
