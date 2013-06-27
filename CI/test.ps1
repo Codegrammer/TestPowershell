@@ -9,10 +9,6 @@ $testExe = $testPath + 'Test.exe'
 
 
 &$testExe $args
-if($LASTEXITCODE -ne 0)
-{
-	write-output $_##teamcity[buildStatus status='FAILURE' text='It Died.']
-	exit 1
-}
 
-exit 0
+
+&powershell ./test2.ps1
