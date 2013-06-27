@@ -10,5 +10,9 @@ $testExe = $testPath + 'Test.exe'
 
 &$testExe $args
 
+$scriptPath = split-path -parent $MyInvocation.MyCommand.Definition
+$scriptPath = $scriptPath + '\test2.ps1'
 
-&powershell ./test2.ps1
+echo $scriptPath
+
+&powershell $scriptPath
