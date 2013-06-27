@@ -8,7 +8,11 @@ $testPath = $scriptPath + '..\Test\Test\bin\Release\'
 $testExe = $testPath + 'Test.exe'
 
 
-$state = &$testExe $args
-write-output $state
+&$testExe $args
+if($LASTEXITCODE -ne 0)
+{
+	write-output $_##teamcity[buildStatus status='FAILURE' text='It Died.']
+	exit 1
+}
 
-exit 1
+exit 0
